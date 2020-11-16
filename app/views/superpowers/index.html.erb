@@ -1,0 +1,8 @@
+<%= @superpowers.each do |superpower| %>
+  <div class="card">
+    <h2 class="card-header"><%= superpower.name %></h2>
+    <p class="card-description"><%= superpower.description %></p>
+    <h3><%= superpower.price %></h3>
+    <h4><%= link_to superpower.user.name, user_path(superpower.user.name) %></h4>
+  </div>
+<% end %>
