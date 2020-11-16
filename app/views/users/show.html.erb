@@ -1,0 +1,8 @@
+<%#= cl_image_tag @user.photo.key %>
+<div class="container text-center">
+  <div class="image my-5">
+   <%= cl_image_tag "user_pic_default", width: 70, height: 70, crop: :scale, radius: :max %>
+  </div>
+  <h1>User:</h1>
+  <h2><%= @user.email %></h2>
+</div>

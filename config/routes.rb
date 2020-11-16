@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/superpowers', to: 'superpowers#index'
   get '/superpowers/new', to: 'superpowers#new'
   post '/superpowers', to: 'superpowers#create'
+  get '/users/:id', to: 'users#show', as: :user
 end
