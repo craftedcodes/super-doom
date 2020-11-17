@@ -1,10 +1,6 @@
 <div class="container text-center">
   <h1>All of your reservations</h1>
 
-  <% @rents.each do |rent| %>
-    <h3> <%= rent %> </h3>
-  <% end %>
-
   <table class="table">
   <thead>
     <tr>
@@ -16,16 +12,17 @@
       <th scope="col">Status</th>
     </tr>
   </thead>
-  
-  <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Invisibility</td>
-      <td>Tomorrow</td>
-      <td>Christmas</td>
+ 
+ <% @rents.each do |rent| %>
+     <tr>
+      <th scope="row"> <%= rent.id %> </th>
+      <td><%= rent.user.email %></td>
+      <td><%= rent.superpower.name %></td>
+      <td> <%= rent.date_from %> </td>
+      <td> <%= rent.date_to %> </td>
       <td>Confirmed</td>
     </tr>
-
+ <% end %>
   <br>
   <h4><%= link_to 'Go back to the Superpowers', superpowers_path %></h4>
 </div>
