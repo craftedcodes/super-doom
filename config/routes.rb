@@ -4,7 +4,7 @@ Rails.application.routes.draw do
  # get '/superpowers', to: 'superpowers#index'
  # get '/superpowers/new', to: 'superpowers#new'
  # post '/superpowers', to: 'superpowers#create'
- get '/users/:id', to: 'users#show', as: :user
+  get '/users/:id', to: 'users#show', as: :user
 
   resources :superpowers do
     resources :rents, only: [:create, :show, :index, :destroy]

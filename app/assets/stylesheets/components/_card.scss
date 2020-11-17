@@ -1,0 +1,24 @@
+.card-header {
+  a {
+  color: red;
+    &:hover {
+    text-decoration: none !important;
+    }
+  }
+}
+.card-link {
+  position: absolute;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.card-user-link {
+  z-index: 3;
+}
+.card-description {
+  color: white;
+  font-size: 26px;
+  background-image: url("https://source.unsplash.com/500x400/?lightning");
+}

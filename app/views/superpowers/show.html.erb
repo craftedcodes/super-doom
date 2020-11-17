@@ -1,6 +1,17 @@
-<div class="card my-5 w-50">
-  <h2 class="card-header" style="color: red"><%= @superpower.name.upcase %></h2>
-  <p class="card-description"><%= @superpower.description %></p>
-  <h3>PRIE: <%= @superpower.price %> DOLLA</h3>
-  <%= link_to "User", user_path(@superpower.user) %>
+<div class="container">
+  <div class="card my-5 text-center" style="width: 400px; margin: 0 auto">
+    <h2 class="card-header" style="color: red"><%= @superpower.name.upcase %></h2>
+    <p class="card-description"><%= @superpower.description %></p>
+    <h3>PRIE: <%= @superpower.price %> DOLLA</h3>
+    <%= link_to "User", user_path(@superpower.user) %>
+  </div>
+
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h2 class="text-center border" style="background-color: white">RENT DE FLAT</h2>
+    <%= simple_form_for :rent, method: "get" do |f| %>
+      <%= f.input :date_from, as: :string, required: true, input_html: { class: "datepicker" } %>
+      <%= f.input :date_to, as: :string, required: true, input_html: { class: "datepicker" } %>
+      <%= f.button :submit, "BOOK IT", class: "btn btn-danger w-100" %>
+    <% end %>
+  </div>
 </div>
