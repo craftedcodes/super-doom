@@ -6,6 +6,7 @@ Rails.application.routes.draw do
  # post '/superpowers', to: 'superpowers#create'
  # get '/users/:id', to: 'users#show', as: :user
 
-resources :superpowers do
-  resources :rents, only: [:create, :show, :index]
+  resources :superpowers do
+    resources :rents, only: [:create, :show, :index]
+  end
 end
