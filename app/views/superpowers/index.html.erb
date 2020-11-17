@@ -1,10 +1,10 @@
 <div class="container text-center">
   <h1>BROWSE DEM SUPERPOWERS</h1>
-  <%= @superpowers.each do |superpower| %>
+  <% @superpowers.each do |superpower| %>
     <div class="card my-5 w-50">
       <h2 class="card-header" style="color: red"><%= superpower.name.upcase %></h2>
       <p class="card-description"><%= superpower.description %></p>
-      <h3>PRIE: <%= superpower.price %>DOLLA</h3>
+      <h3>PRIE: <%= superpower.price %> DOLLA</h3>
       <%= link_to "User", user_path(superpower.user) %>
     </div>
   <% end %>
