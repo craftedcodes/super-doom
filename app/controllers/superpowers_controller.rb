@@ -43,7 +43,6 @@ class SuperpowersController < ApplicationController
   def destroy
     # set_superpower finds it
     # deleting it
-    # saving the changes
     # redirect
     @superpower.destroy
     redirect_to superpowers_path
