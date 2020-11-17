@@ -1,0 +1,33 @@
+<div class="container text-center">
+  <h1>All of your reservations</h1>
+
+  <% @rents.each do |rent| %>
+    <h3> <%= rent %> </h3>
+  <% end %>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Superpower</th>
+      <th scope="col">From:</th>
+      <th scope="col">Until:</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  
+  <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Invisibility</td>
+      <td>Tomorrow</td>
+      <td>Christmas</td>
+      <td>Confirmed</td>
+    </tr>
+
+  <br>
+  <h4><%= link_to 'Go back to the Superpowers', superpowers_path %></h4>
+</div>
+
+
