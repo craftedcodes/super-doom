@@ -5,15 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'faker'
 puts "creating superpowers"
 
 20.times do
   name = Faker::Games::LeagueOfLegends.summoner_spell
   description = Faker::Games::LeagueOfLegends.quote
-  price = rand(1..100)
+  price = 1
   address = Faker::Address.country
   Superpower.create(name: name, description: description, user_id: 1, price: price, location: address)
 end
 
 puts "created superpowers"
+
+puts "creating bookings"
+
+25.times do
+  power_id = rand(1..22)
+  Rent.create(date_from: Date.new, date_to: Date.new, superpower_id: power_id, user_id: 1)
+end
+
+puts "created bookings"
