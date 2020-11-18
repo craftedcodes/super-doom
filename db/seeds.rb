@@ -23,7 +23,6 @@ puts "creating superpowers"
   Superpower.create(name: name, description: description, user_id: rand(1..10), price: price, location: address)
 end
 
-puts "created superpowers"
 
 puts "creating bookings"
 
@@ -32,4 +31,4 @@ puts "creating bookings"
   Rent.create(date_from: Date.new, date_to: Date.new, superpower_id: power_id, user_id: 1)
 end
 
-puts "created bookings"
+puts "done, hf"
