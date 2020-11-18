@@ -11,7 +11,7 @@
   background-color: #0f3460;
   border-radius: 5px;
   border: 5px solid rgb(228, 206, 206);
-  background: linear-gradient(35deg, rgba(245, 244, 226, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%), url("https://source.unsplash.com/500x400/?lightning");
+  background: linear-gradient(35deg, rgba(245, 244, 226, 0.6) 0%, rgba(131, 131, 131, 0.4) 50%), url("https://source.unsplash.com/500x400/?lightning");
 }
 .card-link {
   position: absolute;
@@ -32,6 +32,6 @@
   }
 }
 .card-description {
-  color: rgb(187, 185, 185);
+  color: rgb(0, 0, 0);
   font-size: 26px;
 }
