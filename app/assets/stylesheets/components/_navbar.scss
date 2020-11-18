@@ -1,7 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #162447;
-  color: azure;
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: whitesmoke;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgb(131, 122, 122);
 }
 
 .navbar-lewagon .navbar-collapse {
