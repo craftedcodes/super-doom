@@ -1,11 +1,19 @@
-<div class="container text-center" style="width: 800px; margin: 0 auto">
-  <h1>BROWSE DEM SUPERPOWERS</h1>
+<div class="banner">
+      <div class="banner-wrapper">
+        <p>Find the superpower that fits you</p>
+        <a class="btn btn-flat" href="#">EXPLORE</a>
+      </div>
+</div>
+
+<div class="container-fluid text-center">
+  <h1>BROWSE ALL SUPERPOWERS</h1>
+
   <div class="card-container" style="display: flex; justify-content: space-between">
     <% @superpowers.each do |superpower| %>
       <div class="card my-5" style="flex: 0 0 48%; position: relative">
         <h2 class="card-header" style="color: red"> <%= superpower.name.upcase %> </h2>
         <p class="card-description" style="height: 200px"><%= superpower.description %></p>
-        <h3>PRIE: <%= superpower.price %> DOLLA</h3>
+        <h3>PRICE: <%= superpower.price %> EURO</h3>
         <%= link_to "User", user_path(superpower.user), class: "card-user-link" %>
         <%= link_to "", superpower_path(superpower), class: "card-link" %>
       </div>
