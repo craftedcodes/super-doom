@@ -18,6 +18,13 @@ class SuperpowersController < ApplicationController
 
   def index
     @superpowers = Superpower.all
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @superpowers.geocoded.map do |superpower|
+      {
+        lat: superpower.latitude,
+        lng: superpower.longitude
+      }
+    end
   end
 
   def show
@@ -55,6 +62,6 @@ class SuperpowersController < ApplicationController
   end
 
   def superpower_params
-    params.require(:superpower).permit(:name, :price, :description, :photo)
+    params.require(:superpower).permit(:name, :price, :description, :photo, :location, :coordinates)
   end
 end
