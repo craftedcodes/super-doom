@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+
+puts "creating users"
+
+10.times do
+  User.create(email: Faker::Internet.email, encrypted_password: "asdhaslh")
+end
+
 puts "creating superpowers"
 
 20.times do
@@ -13,7 +20,7 @@ puts "creating superpowers"
   description = Faker::Games::LeagueOfLegends.quote
   price = 1
   address = Faker::Address.country
-  Superpower.create(name: name, description: description, user_id: 1, price: price, location: address)
+  Superpower.create(name: name, description: description, user_id: rand(1..10), price: price, location: address)
 end
 
 puts "created superpowers"
