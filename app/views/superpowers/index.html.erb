@@ -1,14 +1,14 @@
 <div class="banner">
       <div class="banner-wrapper">
+        <h1>BROWSE ALL SUPERPOWERS</h1>
         <p>Find the superpower that fits you</p>
-        <a class="btn btn-flat" href="#">EXPLORE</a>
+        <a class="btn btn-primary rounded" href="#">EXPLORE</a>
       </div>
 </div>
 
-<div class="container-fluid text-center">
-  <h1>BROWSE ALL SUPERPOWERS</h1>
+<div class="container text-center">
 
-  <div class="card-container" style="display: flex; justify-content: space-between">
+  <div class="card-container flex-wrap" style="display: flex; justify-content: space-between">
     <% @superpowers.each do |superpower| %>
       <div class="card my-5" style="flex: 0 0 48%; position: relative">
         <h2 class="card-header" style="color: red"> <%= superpower.name.upcase %> </h2>
