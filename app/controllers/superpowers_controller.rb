@@ -23,7 +23,8 @@ class SuperpowersController < ApplicationController
     @markers = @superpowers.geocoded.map do |superpower|
       {
         lat: superpower.latitude,
-        lng: superpower.longitude
+        lng: superpower.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { superpower: superpower })
       }
     end
   end
