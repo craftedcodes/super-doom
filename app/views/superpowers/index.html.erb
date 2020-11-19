@@ -4,10 +4,9 @@
         <p>Find the superpower that fits you</p>
         <%= form_tag superpowers_path, method: :get do %>
           <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a superpower"
-          %>
+                             params[:query],
+                             class: "form-control",
+                             placeholder: "Find a superpower" %>
           <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
         <% end %>
       </div>
@@ -31,6 +30,6 @@
   <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
   </div>
 </div>
