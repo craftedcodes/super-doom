@@ -18,7 +18,7 @@
       <td><%= rent.superpower.name %></td>
       <td> <%= rent.date_from %> </td>
       <td> <%= rent.date_to %> </td>
-      <td>Confirmed!</td>
+      <td> <%= rent.status ? "confirmed" : "pending" %> </td>
     </tr>
  <% end %>
  
