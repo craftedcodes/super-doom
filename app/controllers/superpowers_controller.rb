@@ -18,6 +18,7 @@ class SuperpowersController < ApplicationController
 
   def index
     @superpowers = Superpower.all
+    @superpowers = Superpower.srch(params[:query]) if params[:query].present?
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @superpowers.geocoded.map do |superpower|
       {

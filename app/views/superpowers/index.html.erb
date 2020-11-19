@@ -2,7 +2,14 @@
       <div class="banner-wrapper">
         <h1>BROWSE ALL SUPERPOWERS</h1>
         <p>Find the superpower that fits you</p>
-        <a class="btn btn-primary rounded" href="#">EXPLORE</a>
+        <%= form_tag superpowers_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a superpower"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
+        <% end %>
       </div>
 </div>
 
