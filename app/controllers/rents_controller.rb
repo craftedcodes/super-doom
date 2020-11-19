@@ -20,7 +20,7 @@ class RentsController < ApplicationController
   def destroy
     @rent = Rent.find(params[:id])
     @rent.destroy
-    redirect_to superpowers_path
+    redirect_to rents_path
   end
 
   private
