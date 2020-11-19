@@ -20,9 +20,14 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  padding-right: 20px;
 }
 
 .navbar-lewagon .navbar-brand img {
   padding-right: 10px;
   width: 40px;
+}
+
+#navbarDropdown {
+  cursor: pointer;
 }
