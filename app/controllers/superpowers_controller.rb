@@ -18,11 +18,13 @@ class SuperpowersController < ApplicationController
 
   def index
     @superpowers = Superpower.all
+    @superpowers = Superpower.srch(params[:query]) if params[:query].present?
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @superpowers.geocoded.map do |superpower|
       {
         lat: superpower.latitude,
-        lng: superpower.longitude
+        lng: superpower.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { superpower: superpower })
       }
     end
   end
@@ -31,6 +33,7 @@ class SuperpowersController < ApplicationController
     # set_superpower already included because of before_action where it's connected to show
     # display one superpower
     # no code needed due to set_superpower
+    @rent = Rent.new
   end
 
   def edit
