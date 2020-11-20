@@ -17,12 +17,12 @@
 
   <div class="card-container flex-wrap" style="display: flex; justify-content: space-between">
     <% @superpowers.each do |superpower| %>
-      <div class="card my-4" id="card" style="flex: 0 0 30%; position: relative; background: linear-gradient(180deg, rgba(151,151,151,0.1) 0%, rgba(220,220,220,0.4) 42%, rgba(30,30,30,0.4) 100%), url(<%= superpower.pic %>);">
+      <div class="card my-4" id="card" style="flex: 0 0 30%; position: relative; background: linear-gradient(75deg, rgba(65,65,65,0.1) 0%, rgba(65,65,65,0.4) 42%, rgba(30,30,30,0.4) 100%), url(<%= superpower.pic %>);">
         <h2 class="card-header"> <%= superpower.name %> </h2>
         <p class="card-description"><%= superpower.description %></p>
         <div class="card-price">
-          <h3>PRICE: <%= superpower.price %> €</h3>
-          <%= link_to "BY: #{superpower.user.email}", user_path(superpower.user), class: "card-user-link" %>
+          <h3><%= superpower.price %> € / Day</h3>
+          <%= link_to "BY: #{Faker::Name.name}", user_path(superpower.user), class: "card-user-link" %>
         </div>
         <%= link_to "", superpower_path(superpower), class: "card-link" %>
       </div>
@@ -37,5 +37,3 @@
   </div>
 </div>
 
-  img = supower.name.split[0]
-  supower.photo = 
