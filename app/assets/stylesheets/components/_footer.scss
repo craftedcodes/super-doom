@@ -5,15 +5,17 @@
   }
 
 .footer {
-    background: transparent;
+    position: fixed;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    background-color: #141a2c;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 35px;
     padding: 0px 50px;
-    color: rgba(0,0,0,0.3);
-    border: solid;
-    border-color: #e94560d8;
+    color: rgba(255, 255, 255, 0.623);
     margin-top: 20px;
   }
 
@@ -22,10 +24,9 @@
     align-items: center;
   }
   .footer-links a {
-    color: black;
-    opacity: 0.15;
+    color: rgba(255, 255, 255, 0.349);
     text-decoration: none;
-    font-size: 24px;
+    font-size: 20px;
     padding: 0px 10px;
   }
   .footer-links a:hover {

@@ -18,13 +18,9 @@
   </div>
 <div class="container">
   <div id="map"
-      style="border: none; z-index: 1; width: 56%; height: 400px; margin: 60px 200px 60px 485px; border-radius: 16px"
+      style="border: 1px solid white; box-shadow: none; z-index: 1; width: 56%; height: 400px; margin: 60px 200px 60px 485px; border-radius: 16px"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-  <div class="navbuts">
-    <div class="m-1 btn w-100"><%= link_to "All Bookings", superpower_rents_path(@superpower) %></div>
-    <div class="m-1 btn w-100"><%= link_to "Back home", superpowers_path %></div>
-  </div>
-</div>
+
