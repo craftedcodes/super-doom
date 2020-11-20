@@ -18,8 +18,10 @@
     <% @superpowers.each do |superpower| %>
       <% if superpower.photo.attached? %>  
         <div class="card my-4" id="card" style="flex: 0 0 30%; position: relative; background: linear-gradient(75deg, rgba(65,65,65,0.1) 0%, rgba(65,65,65,0.4) 42%, rgba(30,30,30,0.4) 100%), url('<%= cl_image_path superpower.photo.key %>');">
-      <% else %> 
+      <% elsif superpower.pic %> 
         <div class="card my-4" id="card" style="flex: 0 0 30%; position: relative; background: linear-gradient(75deg, rgba(65,65,65,0.1) 0%, rgba(65,65,65,0.4) 42%, rgba(30,30,30,0.4) 100%), url(<%= superpower.pic %>);">
+      <% else %>
+        <div class="card my-4" id="card" style="flex: 0 0 30%; position: relative; background: linear-gradient(75deg, rgba(65,65,65,0.1) 0%, rgba(65,65,65,0.4) 42%, rgba(30,30,30,0.4) 100%), url('https://images.unsplash.com/photo-1601790189147-a6213f4feb9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
       <% end %> 
         <h2 class="card-header"> <%= superpower.name %> </h2>
         <p class="card-description"><%= superpower.description %></p>
