@@ -19,6 +19,9 @@
     font-family: $body-font;
     color: #ff3355;
   }
+  label {
+    color: white;
+  }
   &:hover {
     box-shadow: 0 0 65px #e9f8ff;
   }
