@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
 
   resources :superpowers do
-    resources :rents, only: [:create, :show, :index, :destroy]
+    resources :rents, only: [:create, :show, :index]
   end
+  resources :rents, only: [:destroy, :update]
 end

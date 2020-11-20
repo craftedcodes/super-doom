@@ -15,12 +15,23 @@ class RentsController < ApplicationController
       render "superpowers/show"
     end
   end
+
+  def update 
+    @rent = Rent.find(params[:id])
+    @rent.status = true
+    if @rent.save!
+      redirect_to dashboard_path, notice: 'Power confirmed!' 
+    else 
+      render "dashboard"
+    end
+  end
   
   #to cancel a reservation
   def destroy
     @rent = Rent.find(params[:id])
+    @superpower = @rent.superpower
     @rent.destroy
-    redirect_to rents_path
+    redirect_to superpower_rents_path(@superpower)
   end
 
   private
