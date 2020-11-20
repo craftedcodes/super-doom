@@ -12,7 +12,6 @@
       <th scope="col">From:</th>
       <th scope="col">Until:</th>
       <th scope="col">Status</th>
-      <th scope="col">Actions</th>
     </tr>
   </thead>
  
@@ -23,10 +22,10 @@
       <td> <%= rent.date_from %> </td>
       <td> <%= rent.date_to %> </td>
       <td> <%= rent.status ? "confirmed" : "pending" %> </td>
-      <td> <%= link_to '☠️ Delete ', rent_path(rent), method: :delete %> </td>
+      <td> <%= link_to "☠️ Delete ", rent_path(rent), method: :delete %> </td>
     </tr>
  <% end %>
  
   <br>
-  <h6><%= link_to 'Go back to Superpowers', superpowers_path %></h6>
+  <h6><%= link_to "Go back to Superpowers", superpowers_path %></h6>
 </div>
