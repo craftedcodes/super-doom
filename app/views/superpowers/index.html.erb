@@ -4,10 +4,9 @@
         <p>Find the superpower that fits you</p>
         <%= form_tag superpowers_path, method: :get do %>
           <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a superpower"
-          %>
+                             params[:query],
+                             class: "form-control",
+                             placeholder: "Find a superpower" %>
           <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
         <% end %>
       </div>
@@ -17,11 +16,17 @@
 
   <div class="card-container flex-wrap" style="display: flex; justify-content: space-between">
     <% @superpowers.each do |superpower| %>
-      <div class="card my-5" style="flex: 0 0 48%; position: relative">
-        <h2 class="card-header" style="color: red"> <%= superpower.name.upcase %> </h2>
-        <p class="card-description" style="height: 200px"><%= superpower.description %></p>
-        <h3>PRICE: <%= superpower.price %> EURO</h3>
-        <%= link_to "User", user_path(superpower.user), class: "card-user-link" %>
+      <% if superpower.photo.attached? %>  
+        <div class="card my-4" id="card" style="flex: 0 0 30%; position: relative; background: linear-gradient(75deg, rgba(65,65,65,0.1) 0%, rgba(65,65,65,0.4) 42%, rgba(30,30,30,0.4) 100%), url('<%= cl_image_path superpower.photo.key %>');">
+      <% else %> 
+        <div class="card my-4" id="card" style="flex: 0 0 30%; position: relative; background: linear-gradient(75deg, rgba(65,65,65,0.1) 0%, rgba(65,65,65,0.4) 42%, rgba(30,30,30,0.4) 100%), url(<%= superpower.pic %>);">
+      <% end %> 
+        <h2 class="card-header"> <%= superpower.name %> </h2>
+        <p class="card-description"><%= superpower.description %></p>
+        <div class="card-price">
+          <h3><%= superpower.price %> € / Day</h3>
+          <p class="card-user-link">BY: <%= "#{Faker::Name.name}" %></p>
+        </div>
         <%= link_to "", superpower_path(superpower), class: "card-link" %>
       </div>
     <% end %>
@@ -31,6 +36,6 @@
   <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
   </div>
 </div>

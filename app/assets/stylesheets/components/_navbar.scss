@@ -5,9 +5,9 @@
   position: fixed;
   top: 0;
   z-index: 5;
-  background: #1a1a2e;
+  background: transparent;
   color: white;
-  border-bottom: 3px solid #e94560d8;
+  //border-bottom: 3px solid #000000d8;
 }
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
@@ -20,9 +20,18 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  padding-right: 20px;
 }
 
 .navbar-lewagon .navbar-brand img {
   padding-right: 10px;
   width: 40px;
+}
+
+#navbarDropdown {
+  cursor: pointer;
+}
+
+.content-container {
+  padding-top: 64px;
 }

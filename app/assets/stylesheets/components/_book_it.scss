@@ -1,8 +1,30 @@
 .book_it {
-  border: 5px solid rgb(238, 209, 209);
-  background-color: rgba(44, 38, 53, 0.87);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 613px;
+  width: 460px;
+  left: 180px;
+  top: 61px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.712);
+  background-color: rgba(0, 0, 0, 0.712);
+  box-shadow: 0 0 18px #e9f8ff;
+  transition: box-shadow 1.5s linear;
+  h2 {
+    padding-top: 5px;
+    width: 75%;
+    font-family: $body-font;
+    color: #ff3355;
+  }
+  &:hover {
+    box-shadow: 0 0 65px #e9f8ff;
+  }
 }
 .navbuts {
+  margin: 60px 0px 60px 500px;
   a {
   color: black;
   text-decoration: none;
