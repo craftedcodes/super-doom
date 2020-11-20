@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>The Powers you have up for rent:<h1>
+     <% @superpowers.each do |superpower| %>
+        <div class="card my-5" style="flex: 0 0 48%; position: relative">
+        <h2 class="card-header" style="color: red"> <%= superpower.name.upcase %> </h2>
+        <p class="card-description" style="height: 200px"><%= superpower.description %></p>
+        <h3>PRICE: <%= superpower.price %> EURO</h3>
+        <%= link_to "User", user_path(superpower.user), class: "card-user-link" %>
+        <%= link_to "", superpower_path(superpower), class: "card-link" %>
+      </div>
+     <% end %>
+  <h1>You pending reservations:</h1>
+  <table class="table">
+      <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Superpower</th>
+      <th scope="col">From:</th>
+      <th scope="col">Until:</th>
+      <th scope="col">Status</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+      <% @superpowers.each do |superpower| %>
+        <% superpower.rents.each do |rent|  %>
+          <tr>
+          <th scope="row"> <%= rent.id %> </th>
+          <td><%= rent.superpower.name %></td>
+          <td> <%= rent.date_from %> </td>
+          <td> <%= rent.date_to %> </td>
+          <td>  <% if rent.status %> 
+                 confirmed
+                <% else %>
+                <%= link_to 'To confirm', rent_path(rent), method: 'patch', anchor: 'Scroll-here', remote: true %>
+               <% end %></td>
+          <td> <%= link_to '☠️ Delete ', rent_path(rent), method: :delete %> </td>
+          </tr>
+        <% end  %>
+      <% end %>
+      </table>
+</div>
