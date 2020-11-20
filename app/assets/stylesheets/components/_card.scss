@@ -1,14 +1,13 @@
 .card-header {
-  background: linear-gradient(35deg, rgba(0, 0, 0, 0.516) 0%, rgba(0, 0, 0, 0.644) 33%);
-  color: #e94560;
+  //background:  linear-gradient(180deg, rgba(17, 17, 17, 0.1) 0%, rgba(0, 0, 0, 0.4) 42%, rgba(30,30,30,0.4) 100%);
+  color: #ff3355;
   height: 120px;
   z-index: 2;
   font-size: 26px;
-  border-radius: 10px;
-  text-shadow: 1px white;
+  text-shadow: 1px -1px rgba(0, 0, 0, 0.856);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   a {
     &:hover {
     text-decoration: none !important;
@@ -16,6 +15,7 @@
   }
 }
 .card {
+  border: 1px solid white;
   font-family: $body-font;
   box-shadow: 0px 0px 4px #0b2647cb !important;
   border-radius: 16px;
@@ -40,18 +40,20 @@
   }
 }
 .card-user-link {
+  position: absolute;
+  right: 80px;
+  bottom: 5px;
   z-index: 3;
-  color: black; 
+  color: rgba(255, 255, 255, 0.781); 
 }
 
 .card-description {
   font-family: $body-font;  
   z-index: 2;
-  padding: 25px 20px 0 20px;
-  color: rgb(0, 0, 0);
+  padding: 0 20px 0 20px;
+  color: rgb(255, 255, 255);
   font-size: 26px;
   overflow: hidden;
-  height: 200px;
 }
 .card-price {
   background: transparent;
@@ -65,14 +67,70 @@
   height: 100%;
   width: 100%;
 }
+//              CSS FOR SHOW                   //
+//---------------------------------------------//
+
 #showcard {
+  background-color: rgba(0, 0, 0, 0.712);
   border-radius: 10px;
   width: 600px;
-  margin: 100px auto;
+  margin: 60px 200px 60px 500px;
   box-shadow: 0 0 18px #e9f8ff;
   img {
     border-radius: 10px;
-    height: 300px;
+    height: 250px;
     width: 100%;
   }
+}
+
+.showcard-header {
+  padding-top: 35px;
+  background:  linear-gradient(180deg, rgba(17, 17, 17, 0.6) 0%, rgba(0, 0, 0, 0.8) 42%);
+  color: #ff3355;
+  height: 120px;
+  z-index: 2;
+  font-size: 32px;
+  text-shadow: 1px -1px rgba(0, 0, 0, 0.856);
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  a {
+    &:hover {
+    text-decoration: none !important;
+    }
+  }
+}
+.showcard {
+  background-color: rgba(0, 0, 0, 0.712);
+  border: 1px solid white;
+  font-family: $body-font;
+  box-shadow: 0px 0px 4px #0b2647cb !important;
+  border-radius: 16px;
+  height: 320px;
+  width: 600px;
+  background-color: #0f3460;
+}
+
+.showcard-user-link {
+  position: absolute;
+  right: 80px;
+  bottom: 5px;
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.781); 
+}
+
+.showcard-description {
+  height: 130px;
+  font-family: $body-font;  
+  z-index: 2;
+  padding: 35px 20px 0 20px;
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  overflow: hidden;
+}
+.showcard-price {
+  padding-bottom: 40px;
+  background: transparent;
+  z-index: 2;
+  color: rgb(223, 223, 223);
 }
