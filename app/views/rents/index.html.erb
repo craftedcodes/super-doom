@@ -1,5 +1,8 @@
 <div class="container text-center">
-  <h1>All of your reservations</h1>
+  <br>
+  <br>
+  <br>
+  <h1>Here are your booked powers:</h1>
 
   <table class="table">
   <thead>
@@ -9,6 +12,7 @@
       <th scope="col">From:</th>
       <th scope="col">Until:</th>
       <th scope="col">Status</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
  
@@ -19,9 +23,10 @@
       <td> <%= rent.date_from %> </td>
       <td> <%= rent.date_to %> </td>
       <td> <%= rent.status ? "confirmed" : "pending" %> </td>
+      <td> <%= link_to '☠️ Delete ', rent_path(rent), method: :delete %> </td>
     </tr>
  <% end %>
  
   <br>
-  <h4><%= link_to 'Go back to all Superpowers', superpowers_path %></h4>
+  <h6><%= link_to 'Go back to Superpowers', superpowers_path %></h6>
 </div>
