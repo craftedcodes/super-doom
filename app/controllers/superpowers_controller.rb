@@ -33,6 +33,7 @@ class SuperpowersController < ApplicationController
     # set_superpower already included because of before_action where it's connected to show
     # display one superpower
     # no code needed due to set_superpower
+    @rent = Rent.new
   end
 
   def edit
