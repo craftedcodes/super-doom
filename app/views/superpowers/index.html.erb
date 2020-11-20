@@ -21,7 +21,7 @@
         <p class="card-description"><%= superpower.description %></p>
         <div class="card-price">
           <h3><%= superpower.price %> € / Day</h3>
-          <%= link_to "BY: #{Faker::Name.name}", user_path(superpower.user), class: "card-user-link" %>
+          <p class="card-user-link">BY: <%= "#{Faker::Name.name}" %></p>
         </div>
         <%= link_to "", superpower_path(superpower), class: "card-link" %>
       </div>
