@@ -16,11 +16,13 @@
 
   <div class="card-container flex-wrap" style="display: flex; justify-content: space-between">
     <% @superpowers.each do |superpower| %>
-      <div class="card my-5" style="flex: 0 0 48%; position: relative">
-        <h2 class="card-header" style="color: red"> <%= superpower.name.upcase %> </h2>
-        <p class="card-description" style="height: 200px"><%= superpower.description %></p>
-        <h3>PRICE: <%= superpower.price %> EURO</h3>
-        <%= link_to "User", user_path(superpower.user), class: "card-user-link" %>
+      <div class="card my-4" id="card" style="flex: 0 0 30%; position: relative; background: linear-gradient(180deg, rgba(151,151,151,0.1) 0%, rgba(220,220,220,0.4) 42%, rgba(30,30,30,0.4) 100%), url(<%= superpower.pic %>);">
+        <h2 class="card-header"> <%= superpower.name %> </h2>
+        <p class="card-description"><%= superpower.description %></p>
+        <div class="card-price">
+          <h3>PRICE: <%= superpower.price %> €</h3>
+          <%= link_to "BY: #{superpower.user.email}", user_path(superpower.user), class: "card-user-link" %>
+        </div>
         <%= link_to "", superpower_path(superpower), class: "card-link" %>
       </div>
     <% end %>
@@ -33,3 +35,4 @@
       data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
   </div>
 </div>
+

@@ -1,10 +1,13 @@
 <div class="container text-center">
-  <div class="card my-5 text-center" style="width: 400px; margin: 0 auto">
-    <h2 class="card-header" style="color: red"><%= @superpower.name.upcase %></h2>
-    <p class="card-description"><%= @superpower.description %></p>
-    <h3>PRIE: <%= @superpower.price %> DOLLA</h3>
-    <%= link_to "User", user_path(@superpower.user) %>
-  </div>
+    <div id="showcard">
+        <img src="<%= @superpower.pic %>" alt="">
+        <h2 class="card-header"> <%= @superpower.name %> </h2>
+        <p class="card-description"><%= @superpower.description %></p>
+        <div class="card-price">
+          <h3>PRICE: <%= @superpower.price %> EURO</h3>
+          <%= link_to "User", user_path(@superpower.user), class: "card-user-link" %>
+        </div>
+    </div>
 
   <div class="book_it">
     <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
