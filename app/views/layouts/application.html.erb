@@ -12,12 +12,11 @@
   </head>
 
   <body>
-    <!-- app/views/layouts/application.html.erb -->
-    <%= render "shared/navbar" %>
-    <!-- app/views/layouts/application.html.erb -->
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <!-- app/views/layouts/application.html.erb -->
-    <%= render "shared/footer" %>
+    <div class="page-container">
+      <div class="navbar-container"><%= render "shared/navbar" %></div>
+      <div class="content-container"><%= yield %></div>
+      <div class="footer-container"><%= render "shared/footer" %></div>
+      <%= render "shared/flashes" %>
+   </div>
   </body>
 </html>
