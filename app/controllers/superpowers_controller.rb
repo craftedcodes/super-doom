@@ -24,7 +24,7 @@ class SuperpowersController < ApplicationController
       {
         lat: superpower.latitude,
         lng: superpower.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { superpower: superpower })
+        infoWindow: render_to_string(partial: "info_window", locals: { superpower: superpower }),
       }
     end
   end
