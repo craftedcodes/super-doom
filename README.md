@@ -1,1 +1,6 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Superdoom - rent and offer Superpowers
+AirBnB Clone coded during Le Wagon Bootcamp
+
+
+practice for MVC based application including Mapbox API, Flatpickr & Frontend
+
